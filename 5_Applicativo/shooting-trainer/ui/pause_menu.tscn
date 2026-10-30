@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/ui_theme.tres" id="1"]
+[ext_resource type="Script" path="res://ui/PauseMenu.cs" id="2"]
+
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043, 0.059, 0.078, 0.6)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(560, 0)
+theme_type_variation = &"MenuPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel"]
+theme_override_constants/separation = 16
+
+[node name="Icon" type="HBoxContainer" parent="Center/Panel/VBox"]
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="Bar1" type="ColorRect" parent="Center/Panel/VBox/Icon"]
+custom_minimum_size = Vector2(22, 64)
+color = Color(0.957, 0.965, 0.973, 1)
+
+[node name="Bar2" type="ColorRect" parent="Center/Panel/VBox/Icon"]
+custom_minimum_size = Vector2(22, 64)
+color = Color(0.957, 0.965, 0.973, 1)
+
+[node name="Title" type="Label" parent="Center/Panel/VBox"]
+text = "PAUSA"
+theme_type_variation = &"TitleLabel"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 54
+
+[node name="Subtitle" type="Label" parent="Center/Panel/VBox"]
+text = "Il tempo è fermo"
+theme_type_variation = &"MutedLabel"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+
+[node name="Spacer" type="Control" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(0, 10)
+
+[node name="ResumeButton" type="Button" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(380, 80)
+size_flags_horizontal = 4
+focus_mode = 0
+theme_type_variation = &"PrimaryButton"
+text = "RIPRENDI"
+
+[node name="MenuButton" type="Button" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(380, 66)
+size_flags_horizontal = 4
+focus_mode = 0
+text = "TORNA AL MENU"
+
+[node name="Hint" type="Label" parent="Center/Panel/VBox"]
+text = "ESC per riprendere"
+theme_type_variation = &"MutedLabel"
+horizontal_alignment = 1

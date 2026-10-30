@@ -257,7 +257,7 @@
             <LateStart>2026-09-11T08:20:00</LateStart>
             <LateFinish>2026-12-18T15:45:00</LateFinish>
             <FixedCostAccrual>2</FixedCostAccrual>
-            <PercentComplete>43</PercentComplete>
+            <PercentComplete>54</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <ActualStart>2026-09-11T08:20:00</ActualStart>
             <ActualDuration>PT39H5M42S</ActualDuration>
@@ -266,7 +266,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>1</LevelAssignments>
             <LevelingCanSplit>1</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -310,7 +309,7 @@
             <LateStart>2026-09-11T08:20:00</LateStart>
             <LateFinish>2026-12-18T15:45:00</LateFinish>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>43</PercentComplete>
+            <PercentComplete>54</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <ActualStart>2026-09-11T08:20:00</ActualStart>
             <ActualDuration>PT39H5M42S</ActualDuration>
@@ -319,7 +318,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -366,7 +364,7 @@
             <LateStart>2026-09-11T08:20:00</LateStart>
             <LateFinish>2026-12-18T15:45:00</LateFinish>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>39</PercentComplete>
+            <PercentComplete>45</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <ActualStart>2026-09-11T08:20:00</ActualStart>
             <ActualDuration>PT35H35M0S</ActualDuration>
@@ -375,7 +373,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -422,7 +419,7 @@
             <LateStart>2026-09-11T08:20:00</LateStart>
             <LateFinish>2026-12-18T15:45:00</LateFinish>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>36</PercentComplete>
+            <PercentComplete>43</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <ActualStart>2026-09-11T08:20:00</ActualStart>
             <ActualDuration>PT32H45M36S</ActualDuration>
@@ -431,7 +428,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -478,7 +474,7 @@
             <LateStart>2026-09-11T08:20:00</LateStart>
             <LateFinish>2026-12-18T15:45:00</LateFinish>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>45</PercentComplete>
+            <PercentComplete>50</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <ActualStart>2026-09-11T08:20:00</ActualStart>
             <ActualDuration>PT40H57M0S</ActualDuration>
@@ -487,7 +483,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -540,7 +535,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -596,7 +590,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -652,7 +645,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -708,7 +700,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -764,7 +755,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <Notes>Pianificato il 25.09, svolto il 16.10.2026 (vedi diario)</Notes>
@@ -827,7 +817,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -882,7 +871,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -945,7 +933,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1001,7 +988,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1057,7 +1043,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1113,7 +1098,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1169,7 +1153,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1222,7 +1205,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1282,7 +1264,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1333,7 +1314,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1377,14 +1357,13 @@
             <LateStart>2026-10-30T08:20:00</LateStart>
             <LateFinish>2026-12-04T15:45:00</LateFinish>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>0</PercentComplete>
+            <PercentComplete>29</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <RemainingDuration>PT32H30M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1436,14 +1415,13 @@
             <LateStart>2026-10-30T08:20:00</LateStart>
             <LateFinish>2026-11-13T15:45:00</LateFinish>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>0</PercentComplete>
+            <PercentComplete>50</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <RemainingDuration>PT13H0M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1492,14 +1470,13 @@
             <StartSlack>4861</StartSlack>
             <FinishSlack>4800</FinishSlack>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>0</PercentComplete>
+            <PercentComplete>100</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <RemainingDuration>PT6H30M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1548,14 +1525,13 @@
             <StartSlack>4861</StartSlack>
             <FinishSlack>4800</FinishSlack>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <PercentComplete>0</PercentComplete>
+            <PercentComplete>100</PercentComplete>
             <PercentWorkComplete>0</PercentWorkComplete>
             <RemainingDuration>PT6H30M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1608,7 +1584,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1661,7 +1636,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1713,7 +1687,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1776,7 +1749,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1832,7 +1804,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1885,7 +1856,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1936,7 +1906,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -1987,7 +1956,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -2047,7 +2015,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -2100,7 +2067,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -2152,7 +2118,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -2212,7 +2177,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -2263,7 +2227,6 @@
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
-            <LevelingDelay>0</LevelingDelay>
             <LevelingDelayFormat>8</LevelingDelayFormat>
             <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
             <HideBar>0</HideBar>
@@ -2287,8 +2250,8 @@
             <OverAllocated>0</OverAllocated>
             <CanLevel>0</CanLevel>
             <AccrueAt>3</AccrueAt>
-            <StandardRateFormat>2</StandardRateFormat>
-            <OvertimeRateFormat>2</OvertimeRateFormat>
+            <StandardRateFormat>3</StandardRateFormat>
+            <OvertimeRateFormat>3</OvertimeRateFormat>
             <CalendarUID>3</CalendarUID>
             <IsGeneric>0</IsGeneric>
             <IsInactive>0</IsInactive>
@@ -2941,6 +2904,36 @@
             <Start>2026-09-25T08:20:00</Start>
             <Units>1</Units>
             <Work>PT32H30M0S</Work>
+        </Assignment>
+        <Assignment>
+            <UID>37</UID>
+            <TaskUID>20</TaskUID>
+            <ResourceUID>-65535</ResourceUID>
+            <PercentWorkComplete>29</PercentWorkComplete>
+            <ActualWork>PT9H25M30S</ActualWork>
+            <Finish>2026-12-04T15:45:00</Finish>
+            <HasFixedRateUnits>1</HasFixedRateUnits>
+            <FixedMaterial>0</FixedMaterial>
+            <LevelingDelayFormat>7</LevelingDelayFormat>
+            <RemainingWork>PT23H4M30S</RemainingWork>
+            <Start>2026-10-30T08:20:00</Start>
+            <Units>1</Units>
+            <Work>PT32H30M0S</Work>
+        </Assignment>
+        <Assignment>
+            <UID>38</UID>
+            <TaskUID>21</TaskUID>
+            <ResourceUID>-65535</ResourceUID>
+            <PercentWorkComplete>50</PercentWorkComplete>
+            <ActualWork>PT6H30M0S</ActualWork>
+            <Finish>2026-11-13T15:45:00</Finish>
+            <HasFixedRateUnits>1</HasFixedRateUnits>
+            <FixedMaterial>0</FixedMaterial>
+            <LevelingDelayFormat>7</LevelingDelayFormat>
+            <RemainingWork>PT6H30M0S</RemainingWork>
+            <Start>2026-10-30T08:20:00</Start>
+            <Units>1</Units>
+            <Work>PT13H0M0S</Work>
         </Assignment>
     </Assignments>
 </Project>
