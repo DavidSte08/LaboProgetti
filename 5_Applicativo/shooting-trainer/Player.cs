@@ -63,11 +63,11 @@ public partial class Player : CharacterBody3D
         query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };   // ignora il Player
         var result = space.IntersectRay(query);
 
-        if (result.Count > 0)
+        if (result.Count > 0 && result["collider"].As<Node>() is Target target)
         {
-            var collider = (Node)result["collider"];
             var point = (Vector3)result["position"];
-            GD.Print($"Colpito: {collider.Name} nel punto {point}");
+            HitZone zone = target.GetZone(point);
+            GD.Print($"Bersaglio {target.Id} ({target.Name}): {zone} = {(int)zone} punti");
         }
         else
         {
