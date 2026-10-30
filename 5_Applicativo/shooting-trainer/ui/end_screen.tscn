@@ -1,0 +1,147 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/ui_theme.tres" id="1"]
+[ext_resource type="Script" path="res://ui/EndScreen.cs" id="2"]
+[ext_resource type="Script" path="res://ui/HitMap.cs" id="3"]
+
+
+[node name="EndScreen" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043, 0.059, 0.078, 0.85)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="Center"]
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Center/Layout"]
+text = "PARTITA TERMINATA"
+theme_type_variation = &"TitleLabel"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 58
+
+[node name="PillRow" type="CenterContainer" parent="Center/Layout"]
+
+[node name="Pill" type="PanelContainer" parent="Center/Layout/PillRow"]
+theme_type_variation = &"Pill"
+
+[node name="ModeWeapon" type="Label" parent="Center/Layout/PillRow/Pill"]
+text = "CLASSICA · PISTOLA"
+theme_type_variation = &"AccentLabel"
+horizontal_alignment = 1
+
+[node name="Body" type="HBoxContainer" parent="Center/Layout"]
+theme_override_constants/separation = 50
+
+[node name="Left" type="VBoxContainer" parent="Center/Layout/Body"]
+custom_minimum_size = Vector2(560, 0)
+theme_override_constants/separation = 20
+
+[node name="ScorePanel" type="PanelContainer" parent="Center/Layout/Body/Left"]
+custom_minimum_size = Vector2(0, 128)
+theme_type_variation = &"HudPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Center/Layout/Body/Left/ScorePanel"]
+alignment = 1
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Center/Layout/Body/Left/ScorePanel/VBox"]
+text = "PUNTEGGIO"
+theme_type_variation = &"MutedLabel"
+
+[node name="Value" type="Label" parent="Center/Layout/Body/Left/ScorePanel/VBox"]
+text = "0"
+theme_type_variation = &"ValueLabel"
+theme_override_font_sizes/font_size = 52
+
+[node name="HitsPanel" type="PanelContainer" parent="Center/Layout/Body/Left"]
+custom_minimum_size = Vector2(0, 128)
+theme_type_variation = &"HudPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Center/Layout/Body/Left/HitsPanel"]
+alignment = 1
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Center/Layout/Body/Left/HitsPanel/VBox"]
+text = "COLPI A SEGNO"
+theme_type_variation = &"MutedLabel"
+
+[node name="Value" type="Label" parent="Center/Layout/Body/Left/HitsPanel/VBox"]
+text = "0 / 0"
+theme_type_variation = &"ValueLabel"
+theme_override_font_sizes/font_size = 52
+
+[node name="AccuracyPanel" type="PanelContainer" parent="Center/Layout/Body/Left"]
+custom_minimum_size = Vector2(0, 128)
+theme_type_variation = &"HudPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Center/Layout/Body/Left/AccuracyPanel"]
+alignment = 1
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Center/Layout/Body/Left/AccuracyPanel/VBox"]
+text = "PRECISIONE"
+theme_type_variation = &"MutedLabel"
+
+[node name="Value" type="Label" parent="Center/Layout/Body/Left/AccuracyPanel/VBox"]
+text = "0,0 %"
+theme_type_variation = &"ValueLabel"
+theme_override_font_sizes/font_size = 52
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Layout/Body/Left"]
+theme_override_constants/separation = 20
+
+[node name="RestartButton" type="Button" parent="Center/Layout/Body/Left/Buttons"]
+custom_minimum_size = Vector2(270, 86)
+size_flags_horizontal = 3
+focus_mode = 0
+theme_type_variation = &"PrimaryButton"
+text = "RIGIOCA"
+
+[node name="MenuButton" type="Button" parent="Center/Layout/Body/Left/Buttons"]
+custom_minimum_size = Vector2(270, 86)
+size_flags_horizontal = 3
+focus_mode = 0
+text = "MENU"
+
+[node name="MapPanel" type="PanelContainer" parent="Center/Layout/Body"]
+custom_minimum_size = Vector2(620, 0)
+theme_type_variation = &"HudPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Center/Layout/Body/MapPanel"]
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Center/Layout/Body/MapPanel/VBox"]
+
+[node name="Title" type="Label" parent="Center/Layout/Body/MapPanel/VBox/Header"]
+text = "MAPPA DEI COLPI"
+theme_type_variation = &"MutedLabel"
+size_flags_horizontal = 3
+
+[node name="Optional" type="Label" parent="Center/Layout/Body/MapPanel/VBox/Header"]
+text = "FACOLTATIVA"
+theme_type_variation = &"SmallLabel"
+theme_override_colors/font_color = Color(0.96, 0.72, 0, 1)
+
+[node name="HitMap" type="Control" parent="Center/Layout/Body/MapPanel/VBox"]
+custom_minimum_size = Vector2(0, 470)
+size_flags_vertical = 3
+script = ExtResource("3")

@@ -1,0 +1,251 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_pavimento"]
+albedo_color = Color(0.5, 0.49, 0.46, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_pareti"]
+albedo_color = Color(0.33, 0.37, 0.42, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="mat_soffitto"]
+albedo_color = Color(0.16, 0.17, 0.19, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_fondo"]
+albedo_color = Color(0.2, 0.19, 0.18, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_linea_bianca"]
+albedo_color = Color(0.88, 0.86, 0.78, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_linea_gialla"]
+albedo_color = Color(0.85, 0.68, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_luce"]
+albedo_color = Color(1, 0.98, 0.9, 1)
+emission_enabled = true
+emission = Color(1, 0.97, 0.88, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="BoxMesh" id="m_pavimento"]
+material = SubResource("mat_pavimento")
+size = Vector3(8, 0.2, 32)
+
+[sub_resource type="BoxShape3D" id="s_pavimento"]
+size = Vector3(8, 0.2, 32)
+
+[sub_resource type="BoxMesh" id="m_parete"]
+material = SubResource("mat_pareti")
+size = Vector3(0.2, 3.3, 32)
+
+[sub_resource type="BoxShape3D" id="s_parete"]
+size = Vector3(0.2, 3.3, 32)
+
+[sub_resource type="BoxMesh" id="m_soffitto"]
+material = SubResource("mat_soffitto")
+size = Vector3(8, 0.2, 32)
+
+[sub_resource type="BoxMesh" id="m_fondo"]
+material = SubResource("mat_fondo")
+size = Vector3(8, 3.3, 0.2)
+
+[sub_resource type="BoxShape3D" id="s_fondo"]
+size = Vector3(8, 3.3, 0.2)
+
+[sub_resource type="BoxMesh" id="m_linea_distanza"]
+material = SubResource("mat_linea_bianca")
+size = Vector3(7.4, 0.004, 0.06)
+
+[sub_resource type="BoxMesh" id="m_linea_corsia"]
+material = SubResource("mat_linea_gialla")
+size = Vector3(0.05, 0.004, 32)
+
+[sub_resource type="BoxMesh" id="m_plafoniera"]
+material = SubResource("mat_luce")
+size = Vector3(0.25, 0.04, 1.4)
+
+[node name="Poligono" type="Node3D"]
+
+[node name="Pavimento" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Pavimento"]
+mesh = SubResource("m_pavimento")
+
+[node name="Collisione" type="CollisionShape3D" parent="Pavimento"]
+shape = SubResource("s_pavimento")
+
+[node name="PareteSinistra" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 1.65, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="PareteSinistra"]
+mesh = SubResource("m_parete")
+
+[node name="Collisione" type="CollisionShape3D" parent="PareteSinistra"]
+shape = SubResource("s_parete")
+
+[node name="PareteDestra" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1.65, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="PareteDestra"]
+mesh = SubResource("m_parete")
+
+[node name="Collisione" type="CollisionShape3D" parent="PareteDestra"]
+shape = SubResource("s_parete")
+
+[node name="PareteFondo" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, -30.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="PareteFondo"]
+mesh = SubResource("m_fondo")
+
+[node name="Collisione" type="CollisionShape3D" parent="PareteFondo"]
+shape = SubResource("s_fondo")
+
+[node name="PareteRetro" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 2.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="PareteRetro"]
+mesh = SubResource("m_fondo")
+
+[node name="Collisione" type="CollisionShape3D" parent="PareteRetro"]
+shape = SubResource("s_fondo")
+
+[node name="Soffitto" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -14)
+mesh = SubResource("m_soffitto")
+
+[node name="Segnaletica" type="Node3D" parent="."]
+
+[node name="Linea5m" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -5)
+mesh = SubResource("m_linea_distanza")
+
+[node name="Etichetta5m" type="Label3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.2, 0.005, -4.65)
+text = "5 m"
+font_size = 96
+modulate = Color(0.9, 0.88, 0.8, 0.85)
+
+[node name="Linea10m" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -10)
+mesh = SubResource("m_linea_distanza")
+
+[node name="Etichetta10m" type="Label3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.2, 0.005, -9.65)
+text = "10 m"
+font_size = 96
+modulate = Color(0.9, 0.88, 0.8, 0.85)
+
+[node name="Linea15m" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -15)
+mesh = SubResource("m_linea_distanza")
+
+[node name="Etichetta15m" type="Label3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.2, 0.005, -14.65)
+text = "15 m"
+font_size = 96
+modulate = Color(0.9, 0.88, 0.8, 0.85)
+
+[node name="Linea20m" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -20)
+mesh = SubResource("m_linea_distanza")
+
+[node name="Etichetta20m" type="Label3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.2, 0.005, -19.65)
+text = "20 m"
+font_size = 96
+modulate = Color(0.9, 0.88, 0.8, 0.85)
+
+[node name="Linea25m" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, -25)
+mesh = SubResource("m_linea_distanza")
+
+[node name="Etichetta25m" type="Label3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.2, 0.005, -24.65)
+text = "25 m"
+font_size = 96
+modulate = Color(0.9, 0.88, 0.8, 0.85)
+
+[node name="Corsia1" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.002, -14)
+mesh = SubResource("m_linea_corsia")
+
+[node name="Corsia2" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.002, -14)
+mesh = SubResource("m_linea_corsia")
+
+[node name="Corsia3" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.002, -14)
+mesh = SubResource("m_linea_corsia")
+
+[node name="Corsia4" type="MeshInstance3D" parent="Segnaletica"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.002, -14)
+mesh = SubResource("m_linea_corsia")
+
+[node name="Luci" type="Node3D" parent="."]
+
+[node name="PlafonieraS1" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 3.27, -1)
+mesh = SubResource("m_plafoniera")
+
+[node name="PlafonieraD1" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.27, -1)
+mesh = SubResource("m_plafoniera")
+
+[node name="Luce1" type="OmniLight3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, -1)
+light_energy = 1.6
+omni_range = 9.0
+
+[node name="PlafonieraS2" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 3.27, -7)
+mesh = SubResource("m_plafoniera")
+
+[node name="PlafonieraD2" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.27, -7)
+mesh = SubResource("m_plafoniera")
+
+[node name="Luce2" type="OmniLight3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, -7)
+light_energy = 1.6
+omni_range = 9.0
+
+[node name="PlafonieraS3" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 3.27, -13)
+mesh = SubResource("m_plafoniera")
+
+[node name="PlafonieraD3" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.27, -13)
+mesh = SubResource("m_plafoniera")
+
+[node name="Luce3" type="OmniLight3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, -13)
+light_energy = 1.6
+omni_range = 9.0
+
+[node name="PlafonieraS4" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 3.27, -19)
+mesh = SubResource("m_plafoniera")
+
+[node name="PlafonieraD4" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.27, -19)
+mesh = SubResource("m_plafoniera")
+
+[node name="Luce4" type="OmniLight3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, -19)
+light_energy = 1.6
+omni_range = 9.0
+
+[node name="PlafonieraS5" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 3.27, -25)
+mesh = SubResource("m_plafoniera")
+
+[node name="PlafonieraD5" type="MeshInstance3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 3.27, -25)
+mesh = SubResource("m_plafoniera")
+
+[node name="Luce5" type="OmniLight3D" parent="Luci"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, -25)
+light_energy = 1.6
+omni_range = 9.0
