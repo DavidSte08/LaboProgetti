@@ -1,0 +1,48 @@
+[33mcommit e53ef317c55dbb141e946d1b63d5d51ca96b93de[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: ce24329 20b96e5
+Author: David <uzf668@student.edu.ti.ch>
+Date:   Fri Oct 30 14:57:12 2026 +0100
+
+    Merge branch 'main' of https://github.com/DavidSte08/LaboProgetti
+
+[33mcommit ce243297384a751231b88d0b3f348574b5e1a87c[m
+Author: David <uzf668@student.edu.ti.ch>
+Date:   Fri Oct 30 14:56:46 2026 +0100
+
+    30.10
+
+[33mcommit 158d5263b8baec88cf94e53f90a10f89492c87b2[m
+Author: Claude <noreply@anthropic.com>
+Date:   Fri Oct 30 13:10:56 2026 +0100
+
+    30.10: ambiente (poligono e bersagli) e interfaccia (HUD, menu, pausa, fine partita)
+
+[33mcommit 20b96e51842e38859a9e62f13336d3bc1bf264ea[m
+Author: David <uzf668@student.edu.ti.ch>
+Date:   Fri Oct 23 15:26:52 2026 +0200
+
+    Update Gantt.mpp
+
+[33mcommit 65f33472ac3ba6a2ded3b33868f7576ce0bfd86d[m
+Author: Claude <noreply@anthropic.com>
+Date:   Fri Oct 23 15:24:02 2026 +0200
+
+    23.10: mockup, seconda arma (fucile d'assalto), prototipo tecnico in Godot
+
+[33mcommit 27fe01a6a582dfc1b444e21a4cc8220fb14bff57[m
+Author: David <uzf668@student.edu.ti.ch>
+Date:   Fri Oct 16 15:43:20 2026 +0200
+
+    16.10
+
+[33mcommit 3238e8217e758edb44f30fcb2e2b0911fe9c0316[m
+Author: David <uzf668@student.edu.ti.ch>
+Date:   Fri Oct 9 15:26:40 2026 +0200
+
+    Aggiornamento
+
+[33mcommit 15d92ce8f600bdd3c63232ea615183fb94592587[m
+Author: David <uzf668@student.edu.ti.ch>
+Date:   Fri Sep 25 14:38:35 2026 +0200
+
+    Creazione
