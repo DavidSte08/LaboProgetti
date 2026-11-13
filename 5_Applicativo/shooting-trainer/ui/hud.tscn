@@ -120,21 +120,6 @@ theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 8
 columns = 15
 
-[node name="HintPanel" type="PanelContainer" parent="Root"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -86.0
-offset_right = 400.0
-offset_bottom = -30.0
-grow_vertical = 0
-theme_type_variation = &"HudPanel"
-
-[node name="Hint" type="Label" parent="Root/HintPanel"]
-text = "R  ricarica    ·    ESC  pausa"
-theme_type_variation = &"MutedLabel"
-
 [node name="Notice" type="PanelContainer" parent="Root"]
 visible = false
 anchors_preset = 8

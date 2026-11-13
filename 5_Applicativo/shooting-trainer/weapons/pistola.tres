@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3]
+
+[ext_resource type="Script" path="res://WeaponData.cs" id="1_data"]
+[ext_resource type="PackedScene" path="res://weapons/pistola_model.tscn" id="2_model"]
+[ext_resource type="AudioStream" path="res://sounds/pistola_sparo.wav" id="3_shot"]
+[ext_resource type="AudioStream" path="res://sounds/ricarica.wav" id="4_reload"]
+
+[resource]
+script = ExtResource("1_data")
+Type = 0
+MagazineSize = 15
+FireInterval = 0.2
+Automatic = false
+ReloadTime = 1.5
+Recoil = 0.06
+Model = ExtResource("2_model")
+ShotSound = ExtResource("3_shot")
+ReloadSound = ExtResource("4_reload")

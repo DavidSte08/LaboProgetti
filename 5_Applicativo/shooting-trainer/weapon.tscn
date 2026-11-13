@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Weapon.cs" id="1_weapon"]
+[ext_resource type="AudioStream" path="res://sounds/vuoto.wav" id="2_empty"]
+
+[node name="Weapon" type="Node3D"]
+script = ExtResource("1_weapon")
+EmptySound = ExtResource("2_empty")
+
+[node name="ModelHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.17, -0.34)
+
+[node name="Flash" type="OmniLight3D" parent="ModelHolder"]
+light_color = Color(1, 0.8, 0.45, 1)
+light_energy = 4.0
+omni_range = 3.0
+
+[node name="ShotPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+max_polyphony = 4
+
+[node name="ReloadPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+
+[node name="EmptyPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0

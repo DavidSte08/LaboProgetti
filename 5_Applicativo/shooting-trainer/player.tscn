@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di3lowpp2ck5x"]
 
 [ext_resource type="Script" uid="uid://c2hccluadjjvf" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="PackedScene" path="res://weapon.tscn" id="2_weapon"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uufke"]
 radius = 0.4
@@ -15,3 +16,7 @@ shape = SubResource("CapsuleShape3D_uufke")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1724761475]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+fov = 70.0
+near = 0.03
+
+[node name="Weapon" parent="Camera3D" instance=ExtResource("2_weapon")]

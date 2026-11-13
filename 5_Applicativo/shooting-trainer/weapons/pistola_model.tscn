@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="metallo"]
+albedo_color = Color(0.24, 0.24, 0.26, 1)
+metallic = 0.3
+roughness = 0.45
+
+[sub_resource type="StandardMaterial3D" id="polimero"]
+albedo_color = Color(0.13, 0.13, 0.14, 1)
+metallic = 0.0
+roughness = 0.65
+
+[sub_resource type="StandardMaterial3D" id="acciaio"]
+albedo_color = Color(0.42, 0.42, 0.44, 1)
+metallic = 0.4
+roughness = 0.35
+
+[sub_resource type="BoxMesh" id="m0"]
+material = SubResource("metallo")
+size = Vector3(0.032, 0.034, 0.19)
+
+[sub_resource type="BoxMesh" id="m1"]
+material = SubResource("polimero")
+size = Vector3(0.03, 0.022, 0.165)
+
+[sub_resource type="BoxMesh" id="m2"]
+material = SubResource("polimero")
+size = Vector3(0.03, 0.11, 0.045)
+
+[sub_resource type="BoxMesh" id="m3"]
+material = SubResource("metallo")
+size = Vector3(0.032, 0.012, 0.05)
+
+[sub_resource type="BoxMesh" id="m4"]
+material = SubResource("polimero")
+size = Vector3(0.01, 0.006, 0.045)
+
+[sub_resource type="BoxMesh" id="m5"]
+material = SubResource("acciaio")
+size = Vector3(0.006, 0.018, 0.006)
+
+[sub_resource type="CylinderMesh" id="m6"]
+material = SubResource("acciaio")
+top_radius = 0.007
+bottom_radius = 0.007
+height = 0.012
+radial_segments = 16
+rings = 1
+
+[sub_resource type="BoxMesh" id="m7"]
+material = SubResource("acciaio")
+size = Vector3(0.004, 0.008, 0.006)
+
+[sub_resource type="BoxMesh" id="m8"]
+material = SubResource("acciaio")
+size = Vector3(0.022, 0.008, 0.008)
+
+[node name="PistolaModel" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 0.015, -0.08)
+
+[node name="Carrello" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, 0.045, -0.06)
+mesh = SubResource("m0")
+cast_shadow = 0
+
+[node name="Fusto" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, 0.017, -0.05)
+mesh = SubResource("m1")
+cast_shadow = 0
+
+[node name="Impugnatura" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659, 0.2588, 0, -0.2588, 0.9659, 0, -0.04, 0.012)
+mesh = SubResource("m2")
+cast_shadow = 0
+
+[node name="Fondello" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659, 0.2588, 0, -0.2588, 0.9659, 0, -0.097, 0.026)
+mesh = SubResource("m3")
+cast_shadow = 0
+
+[node name="Ponticello" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, -0.012, -0.04)
+mesh = SubResource("m4")
+cast_shadow = 0
+
+[node name="Grilletto" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, -0.002, -0.03)
+mesh = SubResource("m5")
+cast_shadow = 0
+
+[node name="Canna" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.047, -0.158)
+mesh = SubResource("m6")
+cast_shadow = 0
+
+[node name="MirinoAnt" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, 0.066, -0.148)
+mesh = SubResource("m7")
+cast_shadow = 0
+
+[node name="TaccaPost" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, 0.066, 0.028)
+mesh = SubResource("m8")
+cast_shadow = 0
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -0, 0, 0, 1, 0, 0.047, -0.175)

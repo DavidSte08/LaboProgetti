@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3]
+
+[ext_resource type="Script" path="res://WeaponData.cs" id="1_data"]
+[ext_resource type="PackedScene" path="res://weapons/fucile_model.tscn" id="2_model"]
+[ext_resource type="AudioStream" path="res://sounds/fucile_sparo.wav" id="3_shot"]
+[ext_resource type="AudioStream" path="res://sounds/ricarica.wav" id="4_reload"]
+
+[resource]
+script = ExtResource("1_data")
+Type = 1
+MagazineSize = 30
+FireInterval = 0.1
+Automatic = true
+ReloadTime = 1.5
+Recoil = 0.03
+Model = ExtResource("2_model")
+ShotSound = ExtResource("3_shot")
+ReloadSound = ExtResource("4_reload")

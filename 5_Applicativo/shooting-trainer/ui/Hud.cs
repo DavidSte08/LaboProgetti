@@ -101,7 +101,7 @@ public partial class Hud : CanvasLayer
 
     private void BuildAmmoBar(int size)
     {
-        foreach (Node child in _ammoBar.GetChildren()) child.QueueFree();
+        foreach (Node child in _ammoBar.GetChildren()) { _ammoBar.RemoveChild(child); child.QueueFree(); }
         _ammoBar.Columns = Mathf.Min(size, 15);
         bool twoRows = size > 15;
         for (int i = 0; i < size; i++)

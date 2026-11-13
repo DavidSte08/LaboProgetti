@@ -27,4 +27,34 @@ public partial class Target : StaticBody3D
         if (distance <= RadiusOuter) return HitZone.Outer;
         return HitZone.Miss;
     }
+
+    // Foro del proiettile nel punto colpito, per vedere dove si è sparato.
+    private const int MaxHoles = 60;
+    private static CylinderMesh _holeMesh;
+
+    public void AddBulletHole(Vector3 hitPoint)
+    {
+        _holeMesh ??= new CylinderMesh
+        {
+            TopRadius = 0.012f, BottomRadius = 0.012f, Height = 0.001f, RadialSegments = 12, Rings = 1,
+            Material = new StandardMaterial3D { AlbedoColor = new Color(0.08f, 0.07f, 0.06f), Roughness = 1f }
+        };
+
+        Vector2 p = ToLocal2D(hitPoint);
+        var hole = new MeshInstance3D { Mesh = _holeMesh, Name = "Foro" };
+        hole.Position = new Vector3(p.X, p.Y, 0.013f);              // appena davanti ai dischi
+        hole.Rotation = new Vector3(Mathf.DegToRad(90), 0, 0);      // disco rivolto verso +Z
+        hole.CastShadow = GeometryInstance3D.ShadowCastingSetting.Off;
+        AddChild(hole);
+        _holes.Enqueue(hole);
+        if (_holes.Count > MaxHoles) _holes.Dequeue().QueueFree();
+    }
+
+    // Rimuove i fori (all'inizio di una nuova partita).
+    public void ClearBulletHoles()
+    {
+        while (_holes.Count > 0) _holes.Dequeue().QueueFree();
+    }
+
+    private readonly System.Collections.Generic.Queue<MeshInstance3D> _holes = new();
 }
