@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" path="res://poligono.tscn" id="3_poligono"]
 [ext_resource type="PackedScene" path="res://target.tscn" id="4_target"]
 [ext_resource type="PackedScene" path="res://ui/hud.tscn" id="5_hud"]
+[ext_resource type="Script" path="res://ScoreManager.cs" id="6_score"]
 
 [sub_resource type="Environment" id="Environment_sala"]
 background_mode = 1
@@ -20,6 +21,9 @@ fog_density = 0.008
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_ig7tw")
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("6_score")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sala")

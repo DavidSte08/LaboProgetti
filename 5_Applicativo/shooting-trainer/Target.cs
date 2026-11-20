@@ -50,6 +50,37 @@ public partial class Target : StaticBody3D
         if (_holes.Count > MaxHoles) _holes.Dequeue().QueueFree();
     }
 
+    // Mostra i punti ottenuti sopra il bersaglio ("+10", "+5", "+2"), che salgono e svaniscono.
+    public void ShowPoints(HitZone zone)
+    {
+        if (zone == HitZone.Miss) return;
+        var color = zone switch
+        {
+            HitZone.Center => new Color(0.95f, 0.3f, 0.25f),
+            HitZone.Middle => new Color(0.4f, 0.65f, 1f),
+            _ => new Color(0.95f, 0.95f, 0.95f)
+        };
+        var label = new Label3D
+        {
+            Text = $"+{(int)zone}",
+            Modulate = color,
+            OutlineModulate = new Color(0, 0, 0, 0.8f),
+            OutlineSize = 8,
+            FontSize = 48,
+            PixelSize = 0.0007f,
+            FixedSize = true,                                   // stessa grandezza a 5 e a 25 m
+            Billboard = BaseMaterial3D.BillboardModeEnum.Enabled,
+            NoDepthTest = true,
+            Position = new Vector3(0.3f, 0.5f, 0.05f)
+        };
+        AddChild(label);
+        var tween = label.CreateTween().SetParallel();
+        tween.TweenProperty(label, "position", label.Position + new Vector3(0, 0.25f, 0), 0.8f);
+        tween.TweenProperty(label, "modulate:a", 0f, 0.8f).SetDelay(0.3f);
+        tween.TweenProperty(label, "outline_modulate:a", 0f, 0.8f).SetDelay(0.3f);
+        tween.Chain().TweenCallback(Callable.From(label.QueueFree));
+    }
+
     // Rimuove i fori (all'inizio di una nuova partita).
     public void ClearBulletHoles()
     {

@@ -130,6 +130,7 @@ public partial class Weapon : Node3D
             var point = (Vector3)result["position"];
             shot = new ShotResult(target.GetZone(point), target.ToLocal2D(point), target.Id);
             target.AddBulletHole(point);
+            target.ShowPoints(shot.Zone);
         }
         else
         {

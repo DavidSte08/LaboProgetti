@@ -2,7 +2,7 @@ using Godot;
 
 // Script provvisorio della scena principale.
 // Verrà sostituito da GameManager nella fase "Integrazione" (Gantt: 04.12):
-// per ora equipaggia l'arma e collega i segnali dell'arma all'HUD.
+// per ora equipaggia l'arma, crea la GameSession e collega arma, ScoreManager e HUD.
 public partial class Main : Node3D
 {
     private static readonly WeaponData Pistola = GD.Load<WeaponData>("res://weapons/pistola.tres");
@@ -11,7 +11,8 @@ public partial class Main : Node3D
     private Hud _hud;
     private Player _player;
     private Weapon _weapon;
-    private int _shotsFired;
+    private ScoreManager _score;
+    private GameSession _session;
     private double _lastShotTime = -1, _lastInterval;
 
     public override void _Ready()
@@ -19,6 +20,7 @@ public partial class Main : Node3D
         _hud = GetNode<Hud>("Hud");
         _player = GetNode<Player>("Mondo/Player");
         _weapon = _player.Weapon;
+        _score = GetNode<ScoreManager>("ScoreManager");
 
         _weapon.AmmoChanged += (ammo, size) => _hud.UpdateAmmo(ammo, size);
         _weapon.ReloadProgress += progress => _hud.ShowReload(progress);
@@ -26,32 +28,39 @@ public partial class Main : Node3D
         _weapon.ReloadDenied += () => _hud.ShowWarning("RICARICA NON DISPONIBILE");
         _weapon.EmptyTrigger += () => _hud.ShowWarning("CARICATORE VUOTO");
         _weapon.ShotResolved += OnShotResolved;
+        _score.ScoreChanged += OnScoreChanged;
 
-        _hud.SetMode(GameMode.Classica);
-        _hud.UpdateScore(0);
         EquipWeapon(Pistola);
     }
 
+    // Provvisorio: cambiare arma fa partire una nuova "partita" in modalità Classica.
     private void EquipWeapon(WeaponData data)
     {
+        _session = new GameSession(GameMode.Classica, data.Type);
+        _score.Reset(_session);
+        foreach (Target target in GetTree().GetNodesInGroup("targets")) target.ClearBulletHoles();
+
         _hud.HideNotice();
+        _hud.SetMode(_session.Mode);
         _hud.SetWeapon(data.Type);
         _weapon.Equip(data);
-        _shotsFired = 0;
     }
 
-    // Per ora il colpo viene solo scritto nella console: il punteggio arriva con ScoreManager (20.11).
+    // Ogni colpo va allo ScoreManager, che aggiorna la GameSession (REQ-004).
     private void OnShotResolved(int zone, Vector2 localHitPoint, int targetId)
     {
         double now = Time.GetTicksUsec() / 1_000_000.0;
         if (_lastShotTime >= 0) _lastInterval = now - _lastShotTime;
         _lastShotTime = now;
-        _shotsFired++;
 
-        var hitZone = (HitZone)zone;
-        GD.Print(targetId < 0 || hitZone == HitZone.Miss
-            ? "Mancato"
-            : $"Bersaglio {targetId}: {hitZone} = {zone} punti ({localHitPoint.X:0.00}; {localHitPoint.Y:0.00})");
+        _score.RegisterShot(new ShotResult((HitZone)zone, localHitPoint, targetId));
+    }
+
+    // Punteggio (e precisione nella modalità Precisione) nell'HUD (REQ-005_3).
+    private void OnScoreChanged(int score, float accuracy)
+    {
+        _hud.UpdateScore(score);
+        if (_session.Mode == GameMode.Precisione) _hud.UpdateAccuracy(accuracy);
     }
 
     public override void _UnhandledInput(InputEvent ev)
@@ -81,7 +90,7 @@ public partial class Main : Node3D
             $"Angolo verticale: {_player.PitchDegrees:0.0}°\n" +
             $"Posizione: {_player.GlobalPosition.X:0.0}; {_player.GlobalPosition.Z:0.0}\n" +
             $"Arma: {s.Data.Name}  {s.Ammo}/{s.Data.MagazineSize}{(s.IsReloading ? "  (ricarica)" : "")}\n" +
-            $"Colpi sparati: {_shotsFired}\n" +
+            $"Punteggio: {_session.Score}  Colpi: {_session.ShotsHit}/{_session.ShotsFired}  Precisione: {_score.GetAccuracy():0.0} %\n" +
             $"Intervallo ultimo colpo: {_lastInterval:0.000} s");
     }
 }
