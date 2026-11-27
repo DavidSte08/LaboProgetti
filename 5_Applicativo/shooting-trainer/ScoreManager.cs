@@ -8,6 +8,11 @@ public partial class ScoreManager : Node
 
     public GameSession Session { get; private set; }
 
+    // Accesso rapido ai contatori (overlay di debug e script di prova).
+    public int Score => Session?.Score ?? 0;
+    public int ShotsFired => Session?.ShotsFired ?? 0;
+    public int ShotsHit => Session?.ShotsHit ?? 0;
+
     // Azzera punteggio e contatori all'inizio di ogni partita (REQ-004).
     public void Reset(GameSession session)
     {

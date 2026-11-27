@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://poligono.tscn" id="3_poligono"]
 [ext_resource type="PackedScene" path="res://target.tscn" id="4_target"]
 [ext_resource type="PackedScene" path="res://ui/hud.tscn" id="5_hud"]
-[ext_resource type="Script" path="res://ScoreManager.cs" id="6_score"]
+[ext_resource type="Script" uid="uid://c4lxpcj3aby8v" path="res://ScoreManager.cs" id="6_score"]
 
 [sub_resource type="Environment" id="Environment_sala"]
 background_mode = 1
@@ -19,42 +19,42 @@ fog_enabled = true
 fog_light_color = Color(0.2, 0.22, 0.25, 1)
 fog_density = 0.008
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=516120218]
 script = ExtResource("1_ig7tw")
 
-[node name="ScoreManager" type="Node" parent="."]
+[node name="ScoreManager" type="Node" parent="." unique_id=536425894]
 script = ExtResource("6_score")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=71241289]
 environment = SubResource("Environment_sala")
 
-[node name="Mondo" type="Node3D" parent="."]
+[node name="Mondo" type="Node3D" parent="." unique_id=1634639529]
 
-[node name="Poligono" parent="Mondo" instance=ExtResource("3_poligono")]
+[node name="Poligono" parent="Mondo" unique_id=1657857602 instance=ExtResource("3_poligono")]
 
-[node name="Targets" type="Node3D" parent="Mondo"]
+[node name="Targets" type="Node3D" parent="Mondo" unique_id=816738262]
 
-[node name="Target1" parent="Mondo/Targets" instance=ExtResource("4_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0, 1.5, -5)
+[node name="Target1" parent="Mondo/Targets" unique_id=171209934 instance=ExtResource("4_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -5)
 Id = 1
 
-[node name="Target2" parent="Mondo/Targets" instance=ExtResource("4_target")]
+[node name="Target2" parent="Mondo/Targets" unique_id=2117057731 instance=ExtResource("4_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 1.5, -10)
 Id = 2
 
-[node name="Target3" parent="Mondo/Targets" instance=ExtResource("4_target")]
+[node name="Target3" parent="Mondo/Targets" unique_id=761026913 instance=ExtResource("4_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 1.5, -15)
 Id = 3
 
-[node name="Target4" parent="Mondo/Targets" instance=ExtResource("4_target")]
+[node name="Target4" parent="Mondo/Targets" unique_id=935073719 instance=ExtResource("4_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 1.5, -20)
 Id = 4
 
-[node name="Target5" parent="Mondo/Targets" instance=ExtResource("4_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 1.5, -25)
+[node name="Target5" parent="Mondo/Targets" unique_id=1988968127 instance=ExtResource("4_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -25)
 Id = 5
 
-[node name="Player" parent="Mondo" instance=ExtResource("2_0xm2m")]
+[node name="Player" parent="Mondo" unique_id=564314546 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 
-[node name="Hud" parent="." instance=ExtResource("5_hud")]
+[node name="Hud" parent="." unique_id=1562720236 instance=ExtResource("5_hud")]

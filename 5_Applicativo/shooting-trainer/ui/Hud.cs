@@ -10,6 +10,9 @@ public partial class Hud : CanvasLayer
     private ProgressBar _reloadBar;
     private int _barSize = -1;
 
+    // Falso nella modalità Precisione e a fine partita: non mostra "Premi R per ricaricare".
+    public bool ReloadHint = true;
+
     private static readonly Color AmmoFull = new(0.91f, 0.76f, 0.35f);
     private static readonly Color AmmoEmpty = new(1f, 1f, 1f, 0.15f);
     private static readonly Color Danger = new(0.9f, 0.33f, 0.24f);
@@ -36,15 +39,19 @@ public partial class Hud : CanvasLayer
     public void UpdateScore(int score) => _scoreValue.Text = score.ToString();
 
     // Munizioni nel caricatore, in cifre e in barra (REQ-005_2).
-    public void UpdateAmmo(int ammo, int size)
+    // reserve: munizioni di riserva (-1 = illimitate, 0 = nessuna) mostrate accanto al nome dell'arma.
+    public void UpdateAmmo(int ammo, int size, int reserve = 0)
     {
+        _weaponLabel.Text = reserve < 0 ? $"{_weaponName} · RISERVA ∞"
+                          : ReloadHint ? $"{_weaponName} · RISERVA {reserve}"
+                          : _weaponName;
         if (size != _barSize) BuildAmmoBar(size);
         _ammoValue.Text = ammo.ToString();
         _ammoValue.Modulate = ammo == 0 ? Danger : Colors.White;
         _ammoSize.Text = $"/ {size}";
         for (int i = 0; i < _ammoBar.GetChildCount(); i++)
             _ammoBar.GetChild<ColorRect>(i).Color = i < ammo ? AmmoFull : AmmoEmpty;
-        _prompt.Visible = ammo == 0;   // caricatore vuoto: invito a premere R
+        _prompt.Visible = ammo == 0 && ReloadHint && reserve != 0;   // caricatore vuoto: invito a premere R
     }
 
     // Countdown della modalità A tempo (REQ-005_4).
@@ -67,7 +74,8 @@ public partial class Hud : CanvasLayer
     }
 
     // Arma in uso (REQ-011_4).
-    public void SetWeapon(WeaponType weapon) => _weaponLabel.Text = weapon.DisplayName();
+    public void SetWeapon(WeaponType weapon) => _weaponLabel.Text = _weaponName = weapon.DisplayName();
+    private string _weaponName = "";
 
     // Ricarica in corso con barra di avanzamento (0..1) (REQ-002_3).
     public void ShowReload(float progress)
@@ -86,6 +94,16 @@ public partial class Hud : CanvasLayer
         _noticeLabel.Modulate = Danger;
         _reloadBar.Visible = false;
         _notice.Visible = true;
+    }
+
+    // Messaggio informativo (es. fine partita).
+    public void ShowInfo(string text)
+    {
+        _noticeLabel.Text = text;
+        _noticeLabel.Modulate = Colors.White;
+        _reloadBar.Visible = false;
+        _notice.Visible = true;
+        _prompt.Visible = false;
     }
 
     public void HideNotice() => _notice.Visible = false;

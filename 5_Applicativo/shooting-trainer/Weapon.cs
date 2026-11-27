@@ -5,7 +5,7 @@ using Godot;
 public partial class Weapon : Node3D
 {
     [Signal] public delegate void ShotResolvedEventHandler(int zone, Vector2 localHitPoint, int targetId);
-    [Signal] public delegate void AmmoChangedEventHandler(int ammo, int magazineSize);
+    [Signal] public delegate void AmmoChangedEventHandler(int ammo, int magazineSize, int reserve);   // reserve -1 = illimitate
     [Signal] public delegate void ReloadProgressEventHandler(float progress);   // 0..1
     [Signal] public delegate void ReloadFinishedEventHandler();
     [Signal] public delegate void ReloadDeniedEventHandler();                    // modalità Precisione
@@ -23,6 +23,7 @@ public partial class Weapon : Node3D
     // Accesso rapido allo stato (usato dall'overlay di debug e dagli script di test).
     public int Ammo => State?.Ammo ?? 0;
     public int MagazineSize => State?.Data.MagazineSize ?? 0;
+    public int Reserve => State?.Reserve ?? 0;
     public bool IsReloading => State?.IsReloading ?? false;
     public string WeaponName => State?.Data.Name ?? "";
 
@@ -48,9 +49,10 @@ public partial class Weapon : Node3D
     }
 
     // Carica modello e caratteristiche dell'arma e riempie il caricatore (REQ-011).
-    public void Equip(WeaponData data)
+    // reserve: munizioni di riserva oltre al caricatore (-1 = illimitate, 0 = nessuna).
+    public void Equip(WeaponData data, int reserve = -1)
     {
-        State = new WeaponState(data);
+        State = new WeaponState(data) { Reserve = reserve };
         _trigger = false;
         _reloadPlayer.Stop();
         _reloadTween?.Kill();
@@ -67,7 +69,7 @@ public partial class Weapon : Node3D
 
         _shotPlayer.Stream = data.ShotSound;
         _reloadPlayer.Stream = data.ReloadSound;
-        EmitSignal(SignalName.AmmoChanged, State.Ammo, data.MagazineSize);
+        EmitAmmo();
     }
 
     // Grilletto premuto o rilasciato (REQ-002_5, REQ-011_2, REQ-011_3).
@@ -93,7 +95,7 @@ public partial class Weapon : Node3D
         // Fucile automatico: continua a sparare finché il grilletto resta premuto.
         if (_trigger && State.Data.Automatic) Shoot();
 
-        if (State.IsReloading)
+        if (State.IsReloading && IsActive)
         {
             State.ReloadElapsed += delta;
             float progress = Mathf.Clamp((float)(State.ReloadElapsed / State.Data.ReloadTime), 0f, 1f);
@@ -138,7 +140,7 @@ public partial class Weapon : Node3D
         }
 
         EmitSignal(SignalName.ShotResolved, (int)shot.Zone, shot.LocalHitPoint, shot.TargetId);
-        EmitSignal(SignalName.AmmoChanged, State.Ammo, State.Data.MagazineSize);
+        EmitAmmo();
     }
 
     // Ricarica con il tasto R, circa 1,5 s (REQ-002_3, REQ-002_4).
@@ -147,6 +149,7 @@ public partial class Weapon : Node3D
         if (State == null || !IsActive || State.IsReloading) return;
         if (!CanReload) { EmitSignal(SignalName.ReloadDenied); return; }
         if (State.Ammo == State.Data.MagazineSize) return;   // caricatore pieno
+        if (State.Reserve == 0) return;                      // riserva finita
 
         State.IsReloading = true;
         State.ReloadElapsed = 0;
@@ -170,10 +173,18 @@ public partial class Weapon : Node3D
     private void FinishReload()
     {
         State.IsReloading = false;
-        State.Ammo = State.Data.MagazineSize;
+
+        // Dalla riserva si prendono solo i colpi che mancano nel caricatore.
+        int missing = State.Data.MagazineSize - State.Ammo;
+        int taken = State.Reserve < 0 ? missing : Mathf.Min(missing, State.Reserve);
+        State.Ammo += taken;
+        if (State.Reserve > 0) State.Reserve -= taken;
+
         EmitSignal(SignalName.ReloadFinished);
-        EmitSignal(SignalName.AmmoChanged, State.Ammo, State.Data.MagazineSize);
+        EmitAmmo();
     }
+
+    private void EmitAmmo() => EmitSignal(SignalName.AmmoChanged, State.Ammo, State.Data.MagazineSize, State.Reserve);
 
     private Godot.Collections.Dictionary CastRay()
     {

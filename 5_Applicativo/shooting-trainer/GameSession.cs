@@ -10,6 +10,7 @@ public class GameSession
     public int Score;
     public int ShotsFired;
     public int ShotsHit;
+    public int MaxShots;                                     // caricatori × MagazineSize, 0 = illimitati
     public float TimeLeft;                                   // solo modalità A tempo
     public List<ShotResult> Shots { get; } = new();          // per la mappa dei colpi (REQ-010)
 

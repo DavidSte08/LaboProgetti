@@ -3,6 +3,7 @@ public class WeaponState
 {
     public WeaponData Data;
     public int Ammo;                 // munizioni nel caricatore
+    public int Reserve = -1;         // munizioni di riserva, -1 = illimitate
     public bool IsReloading;
     public double ReloadElapsed;     // secondi trascorsi dall'inizio della ricarica
     public double LastShotTime = -1; // istante dell'ultimo colpo (secondi)
